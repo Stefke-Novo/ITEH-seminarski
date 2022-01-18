@@ -1,0 +1,123 @@
+#contactForm{
+    display: flex;
+    height: 80vh;
+    background-color: transparent;
+    margin-bottom: 50px;
+}
+#contactForm form,#conLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+}
+#contactForm form{
+    align-items: center;
+}
+.formData{
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    height: 20%;
+    justify-content: center;
+    border-radius: 15px;
+}
+.formData label{
+    font-size: 18px;
+    width: fit-content;
+    font-weight: bold;
+    color:white;
+}
+.formData input{
+    height: 40px;
+    background-color: transparent;
+    border-bottom: 4px solid white;
+    outline: none;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    transition: 0.4s;
+    font-size: larger;
+    color: white;
+    border-radius: 15px;
+}
+.formData textarea{
+    height: 60px;
+    background-color: transparent;
+    border-bottom: 4px solid white;
+    outline: none;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    transition:0.5s;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 15px;
+}
+.formData input:focus,.formData textarea:focus{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+#contactFormAll{
+    background-image:url("https://images.pexels.com/photos/462331/pexels-photo-462331.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+    background-size: 100% 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 650px;
+}
+#contHeadContent{
+    justify-content: space-evenly;
+    margin-top: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+#contHeadContent h1,#contHeadContent p{
+    width: fit-content;
+}
+#contHeadContent p{
+    font-weight: bold;
+    display: flex;
+    width: 70%;
+    text-align: center;
+}
+.iconCircle{
+    border-radius: 50px;
+    background-color: gray;
+    width: fit-content;
+    padding: 8px;
+}
+.conLeftInfo{
+    color: white;
+    width: fit-content;
+    border-radius:15px;
+    text-align: center;
+}
+.conLeftItem{
+    width: fit-content;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#formDataBtn{
+    background-color: transparent;
+    color: white;
+    font-size: 40px;
+    border:none;
+    transition: 0.3s;
+    border-radius: 15px;
+    min-height: 50px;
+    min-width: 150px;
+    height: 5%;
+    width:30%;
+}
+#formDataBtn:hover{
+    font-size: 30px;
+    background-color: rgb(255, 166, 0);
+    height: 10%;
+    width: 50%;
+}

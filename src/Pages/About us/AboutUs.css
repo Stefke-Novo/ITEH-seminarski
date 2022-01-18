@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+#teamWrap{
+    background-color: #262626;
+    font-family: 'Roboto', sans-serif;
+    min-height: fit-content;
+}
+#team{
+    padding: 50px 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+#teamContainer{
+    width: 80%;
+    margin: 50px auto;
+}
+.teamRow{
+    position: relative;
+    width:100%;
+    box-sizing: border-box;
+}
+.teamRow h1{
+    color:#fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+.teamRow p{
+    margin: 20px 0 0;
+    color: #fff;
+    padding-left: 20px ;
+    border-left: 5px solid #f00;
+}
+.teamRow .teamColumn{
+    margin: 0 10px;
+    position: relative;
+    float: left;
+    width: calc(25% - 20px);
+    min-height: 250px;
+    overflow: hidden;
+}
+.teamRow .teamColumn:before{
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,0,0,1);
+    z-index: 1;
+    transition: .5s;
+    mix-blend-mode: soft-light;
+}
+.teamRow .teamColumn:hover:before{
+    bottom: 0;
+}
+.mgt50px{
+    margin-top: 50px;
+    box-sizing: border-box;
+}
+.teamRow .teamColumn .teamImgBox{
+    position: relative;
+}
+.teamRow .teamColumn .teamImgBox img{
+    width:100%;
+    transition:5s;
+}
+.teamRow .teamColumn:hover .teamImgBox img{
+    transform: scale(1.5);
+}
+.teamRow .teamColumn .teamDetails{
+    position: absolute;
+    bottom: -85px;
+    left: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,.9);
+    width: 100%;
+    transition: .5s;
+    z-index: 2;
+}
+.teamRow .teamColumn:hover .teamDetails{
+    bottom: 0px;
+}
+.teamRow .teamColumn .teamDetails h3{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-weight: 500;
+    text-align: right;
+    text-transform: uppercase;
+}
+.teamRow .teamColumn .teamDetails h3 span{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #f00;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    top: -6px;
+}
+.teamRow .teamColumn .teamDetails ul{
+    margin: 0;
+    padding: 0;
+    display:flex ;
+    float: right;
+}
+.teamRow .teamColumn .teamDetails ul li{
+    list-style: none;
+
+}
+.teamRow .teamColumn .teamDetails ul li a{
+    padding: 0 10px;
+    color: #fff;
+}
+@media (max-width:992px) {
+    #teamContainer{
+        width: 90%;
+        margin: 20px auto;
+    }
+    .teamRow .teamColumn{
+        width: calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}
+@media (max-width:600px) {
+    #teamContainer{
+        width: 95%;
+        margin: 20px auto;
+    }
+    .teamRow .teamColumn{
+        width: calc(100% - 20px);
+        margin-bottom: 20px;
+    }
+}
+#aboutUsWrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("https://media.istockphoto.com/photos/multi-colored-abstract-network-background-picture-id959769248?b=1&k=20&m=959769248&s=170667a&w=0&h=U10RbdRrdGESumDbjh6VyU-PeqVh5a26_2i_1czuswg=");
+    background-size: cover;
+}
+#aboutUsContainer{
+    position: relative;
+    width: 70%;
+    height: 70vh;
+}
+#aboutUsContainer .clip{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+#aboutUsContainer .clip1{
+    background-color: #f00;
+    clip-path: polygon(0 0, 55% 0, 20% 100%, 0% 100%);
+    background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1615636027879-cb123581a284?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHVuc3BhbHNofGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+    background-size: 100% 100%;
+}
+#aboutUsContainer .clip2{
+    background-color: #0f0;
+    clip-path: polygon(55% 0, 100% 0, 45% 100%, 20% 100%);
+    background-size: cover;
+    background-size: 100% 100%;
+    background-image: url("https://images.unsplash.com/photo-1523720131524-71ae6dbed986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHVuc3BhbHNofGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+}
+#aboutUsContainer .clip3{
+    background-color: #00f;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 45% 100%);
+    background-size: cover;
+    background-size: 100% 100%;
+    background-image: url("https://images.unsplash.com/photo-1622800602481-aa84aad535eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHVuc3BhbHNofGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+}
+#aboutUsContainer:hover .clip{
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+#aboutUsContainer .clip:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.aboutUsContent{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 70%;
+    padding: 20px;
+    background: #fff;
+    transition:.5s;
+    opacity: 0;
+}
+#aboutUsContainer .clip:hover .aboutUsContent{
+    bottom: 0;
+    opacity:1;
+}
