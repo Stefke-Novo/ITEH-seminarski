@@ -40,19 +40,19 @@ function MainMenu() {
             <Route index path="/home">
                 <Home/>
             </Route>
-            <Route index path="/aboutus">
+            <Route  path="/aboutus">
                 <AboutUs/>
             </Route>
-            <Route index path="/collection">
+            <Route  path="/collection">
                 <Collection/>
             </Route>
-            <Route index path="/contact">
+            <Route  path="/contact">
                 <Contact/>
             </Route>
-            <Route index path="/login">
+            <Route  path="/login">
                 <LogIn/>
             </Route>
-            <Route index path="/register">
+            <Route  path="/register">
                 <Register/>
             </Route>
             <Route to="/dashboard">

@@ -1,0 +1,468 @@
+
+
+
+
+
+
+
+
+:root
+{
+    --blue: #287bff;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+}
+#dashboard
+{
+    min-height:100vh;
+    overflow-x: hidden;
+}
+#dashboardContainer
+{
+    position:relative;
+    width: 100%;
+}
+.dashboardNavigation
+{
+    position:fixed;
+    width:300px;
+    height:100%;
+    background-color: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition:0.5s;
+    overflow:hidden;
+}
+.dashboardNavigation.active{
+    width:80px;
+
+}
+.dashboardNavigation ul
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+.dashboardNavigation ul li
+{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.dashboardNavigation ul li:hover,
+.dashboardNavigation ul li.hovered
+{
+    background-color: var(--white);
+}
+.dashboardNavigation ul li:nth-child(1)
+{
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.dashboardNavigation ul li a
+{
+    position:relative;
+    display: block;
+    width:100%;
+    display:flex;
+    text-decoration: none;
+    color:var(--white);
+}
+.dashboardNavigation ul li:hover a,
+.dashboardNavigation ul li.hovered a
+{
+    color:var(--blue);
+
+}
+.dashboardNavigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align:center;
+}
+.dashboardNavigation ul li a .icon *{
+    font-size: 1.5rem;
+}
+.dashboardNavigation ul li a .title{
+    position:relative;
+    display: block;
+    padding:0 10px;
+    height:60px;
+    line-height: 60px;
+    text-align:start;
+    white-space: nowrap;
+}
+/*curve outside*/
+.dashboardNavigation ul li.hovered a::before,
+.dashboardNavigation ul li:hover a::before{
+    content:'';
+    position:absolute;
+    right: 0;
+    width: 50px ;
+    height:50px;
+    background: transparent;
+    top:-50px;
+    border-radius:50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.dashboardNavigation ul li:hover a::after,
+.dashboardNavigation ul li.hovered a::after{
+    content:'';
+    position:absolute;
+    right: 0;
+    width: 50px ;
+    height:50px;
+    background: transparent;
+    bottom:-50px;
+    border-radius:50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.dashboardMain{
+    position:absolute;
+    width:calc(100% - 300px);
+    left:300px;
+    min-height:100vh;
+    background:var(--white);
+    transition:0.5s;
+}
+.dashboardMain.active{
+    width:calc(100% - 80px);
+    left: 80px;
+}
+.dashboardTopbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.dashboardToggle{
+    position: relative;
+    top:0;
+    width:60px;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+.dashboardSearch{
+    position:relative;
+    width:400px;
+    margin:0 10px;
+
+}
+.dashboardSearch label{
+    position:relative;
+    width:100%;
+}
+.dashboardSearch label input{
+    width: 100%;
+    height:40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    outline:none;
+    padding-left: 35px;
+    font-size: 18px;
+    border:1px solid var(--black2);
+}
+.dashboardSearch label svg{
+    position:absolute;
+    top:0;
+    left:10px;
+    font-size: 1.2em;
+}
+#dashboardUser{
+    position:relative;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    overflow:hidden;
+    cursor: pointer;
+}
+#dashboardUser img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.dashboardCardBox{
+    position: relative;
+    width:100%;
+    padding:20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+.dashboardCardBox .dashboardCard{
+    position: relative;
+    background-color: var(--white);
+    padding:30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.dashboardCardBox .dashboardCard .dashboardNumbers{
+    position:relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color:var(--blue);
+}
+.dashboardCardBox .dashboardCard .dashboardCardName{
+    color:var(--black2);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+.dashboardCardBox .dashboardCard .dashboardIconBx{
+    font-size: 3.5em;
+    color:var(--black2);
+}
+.dashboardCardBox .dashboardCard:hover{
+    background: var(--blue);
+}
+.dashboardCardBox .dashboardCard:hover .dashboardNumbers,
+.dashboardCardBox .dashboardCard:hover .dashboardCardName,
+.dashboardCardBox .dashboardCard:hover .dashboardIconBx{
+    color:var(--white);
+}
+.dashboardGraphBox{
+    position:relative;
+    width:100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+    min-height: 200px;
+}
+.dashboardGraphBox .dashboardBox{
+    position:relative;
+    padding:20px;
+    width: 100%;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.dashboardDetails{
+    position:relative;
+    width:100%;
+    padding:20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    /*margin-top: 10px;*/
+}
+.dashboardDetails .dashboardRecentOrders{
+    position:relative;
+    display: grid;
+    min-height: 500px;
+    background:var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+.dashboardCardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.dashboardCardHeader h2{
+    font-weight: 600;
+    color:var(--blue);
+
+}
+.dashboardBtn{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+.dashboardDetails table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.dashboardDetails table thead td{
+    font-weight: 600;
+}
+.dashboardDetails .dashboardRecentOrders table tr{
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dashboardDetails .dashboardRecentOrders table tr:last-child{
+    border-bottom: none;
+}
+.dashboardDetails .dashboardRecentOrders table tbody tr:hover{
+    background: var(--blue);
+    color: var(--white);
+}
+.dashboardDetails .dashboardRecentOrders table tr td{
+    padding: 10px;
+}
+.dashboardDetails .dashboardRecentOrders table tr td:last-child{
+    text-align: end;
+}
+.dashboardDetails .dashboardRecentOrders table tr td:nth-child(2){
+    text-align: end;
+}
+.dashboardDetails .dashboardRecentOrders table tr td:nth-child(3){
+    text-align: center;
+}
+.dashboardStatus.dashboardDelivered{
+    padding: 2px 4px;
+    background:#8de02c;
+    color:var(--white);
+    border-radius:4px ;
+    font-size: 14px;
+    font-weight: 500;
+}
+.dashboardStatus.dashboardPending{
+    padding: 2px 4px;
+    background:#f00;
+    color:var(--white);
+    border-radius:4px ;
+    font-size: 14px;
+    font-weight: 500;
+}
+.dashboardStatus.dashboardReturn{
+    padding: 2px 4px;
+    background:#f9ca3f;
+    color:var(--white);
+    border-radius:4px ;
+    font-size: 14px;
+    font-weight: 500;
+}
+.dashboardStatus.dashboardInProgress{
+    padding: 2px 4px;
+    background:#1795ce;
+    color:var(--white);
+    border-radius:4px ;
+    font-size: 14px;
+    font-weight: 500;
+}
+.dashboardRecentCustomers{
+    position:relative;
+    display: grid;
+    min-height:500px;
+    padding:20px;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius:20px;
+}
+.dashboardRecentCustomers .dashboardImgBx{
+    position: relative;
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow:hidden;
+}
+.dashboardRecentCustomers .dashboardImgBx{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+.dashboardRecentCustomers table tr td{
+    padding:12px 10px;
+}
+.dashboardRecentCustomers table tr td h4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+.dashboardRecentCustomers table tr td h4 span{
+    font-size: 14px;
+    color: var(--black2);
+}
+.dashboardRecentCustomers table tr:hover{
+    background:var(--blue);
+    color:var(--white);
+}
+.dashboardRecentCustomers table tr:hover td h4 span{
+    color: var(--white);
+}
+
+@media (max-width: 991px){
+
+    .dashboardGraphBox{
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .dashboardNavigation{
+        left: -300px;
+    }
+    .dashboardNavigation.active{
+        width:300px;
+        left:0;
+    }
+    .dashboardMain{
+        width:100%;
+        left:0;
+    }
+    .dashboardMain.active{
+        left:300px;
+    }
+    .dashboardCardBox{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width: 768px){
+    .dashboardDetails{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .dashboardRecentOrders{
+        overflow-x: auto;
+    }
+    .dashboardStatus.dashboardInProgress{
+        white-space: nowrap;
+    }
+}
+@media (max-width: 480px){
+    .dashboardCardBox{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .dashboardCardHeader{
+        font-size: 20px;
+    }
+    .dashboardUser{
+        min-width: 40px;
+    }
+    .dashboardNavigation{
+        width:100%;
+        left:-100%;
+        z-index: 1000;
+    }
+    .dashboardNavigation.active{
+        width:100%;
+        left:0;
+    }
+    .dashboardToggle{
+        z-index: 10001;
+    }
+    .dashboardMain.active .dashboardToggle{
+        color:#fff;
+        position:fixed;
+        top:60px;
+        right:0;
+        left:initial;
+
+    }
+}

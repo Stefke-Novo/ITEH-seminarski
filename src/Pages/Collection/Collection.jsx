@@ -3,6 +3,7 @@ import "./Collection.css"
 import axios from "axios"
 import { Link, Switch,Route } from 'react-router-dom'
 import Category from '../../Components/Category/Category'
+import CategoryCard from '../../Components/Category card/CategoryCard'
 class Collection extends Component {
     constructor(props){
         super(props)
@@ -21,16 +22,13 @@ class Collection extends Component {
         <>
         <div>
             <h1>Colleciton</h1>
-            <div>
+            <div id='categoryList'>
                 {this.state.data.map((data)=>(
-                    <div key={data.id}>
-                        <h1><Link to={`/collection/${data.slug}`}>{data.name}</Link></h1>
-                        <p>{data.description}</p>
-                    </div>
+                    <CategoryCard key={data.id} slug={`/collection/${data.slug}`} name={data.name} description={data.description}/>
                 ))}
             </div>
                 <Route path="/collection/:slug">
-                    <Category categories={this.state.data} path={"/collection"}/>
+                    <Category path={"/collection"}/>
                 </Route>
         </div>
         </>

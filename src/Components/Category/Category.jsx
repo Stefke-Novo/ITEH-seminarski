@@ -1,20 +1,30 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import "./Category.css"
-import {useRouteMatch,Link,Route} from "react-router-dom"
-function Category({categories,path}) {
-    //let {path,url}=useRouteMatch();
-    //var category=categories.filter(category=>category.slug===match.patams.slug);
+import {useRouteMatch,Link} from "react-router-dom"
+import axios from "axios"
+import BookCard from '../Book card/BookCard';
+function Category({path}) {
+    const [titles,setTitles]=useState([]);
+    const [category,setCategory]=useState({});
     let route = useRouteMatch();
-    console.log(categories);
     console.log(route);
-    let category=categories.filter(category=>category.slug===route.params.slug);
-    console.log(category);
+    useEffect(() => {
+        axios.get(`http://localhost:8000/api/get-title/${route.params.slug}`).then(
+        (res)=>{setTitles(res.data.title_data.title);
+        console.log(res.data);
+        setCategory(res.data.title_data.genre);    
+        console.log(res.data.title_data.title);
+    });
+    }, []);
     console.log(path);
-    //console.log(category);
     return (
         <div className='category'>
-            <h1>{category[0].name} </h1>
-            <p>{category[0].description}</p>
+            <p>{category.name}</p>
+            <div id='bookList'>
+                {titles.map((title)=>(
+                    <BookCard key={title.id} name={title.name} description={title.description} slug={title.slug} image={title.image} url={route.url}/>
+                ))}
+            </div>
             <Link to={`${path}`}>Back</Link>
         </div>
     )
