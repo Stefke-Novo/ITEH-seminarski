@@ -143,6 +143,7 @@
     min-height: 100vh;
     background-image: url("https://media.istockphoto.com/photos/multi-colored-abstract-network-background-picture-id959769248?b=1&k=20&m=959769248&s=170667a&w=0&h=U10RbdRrdGESumDbjh6VyU-PeqVh5a26_2i_1czuswg=");
     background-size: cover;
+    margin-top: 60px;
 }
 #aboutUsContainer{
     position: relative;

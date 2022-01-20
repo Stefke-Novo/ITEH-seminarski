@@ -3,7 +3,7 @@ import "./Home.css";
 import {Link} from "react-router-dom"
 function Home() {
     return (
-        <div>
+        <div id='homePageWrap'>
             <div id='homePage'>
                 <h2>Website in meintenance...</h2>
                 <div id='mainText'>
@@ -14,7 +14,7 @@ function Home() {
                     and manage titles and genres
                     </p>
                         <button id='homeBtn1'>
-                            <Link to="/dashboard">
+                            <Link to="/admin/dashboard">
                                 Dashboard
                             </Link>
                         </button>

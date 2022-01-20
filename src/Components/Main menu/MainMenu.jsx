@@ -55,7 +55,7 @@ function MainMenu() {
             <Route  path="/register">
                 <Register/>
             </Route>
-            <Route to="/dashboard">
+            <Route to="/admin/dasboard">
                 <Dashboard/>
             </Route>
         </Switch>

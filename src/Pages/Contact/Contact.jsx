@@ -4,7 +4,7 @@ import { MdLocationOn,MdPhone,MdEmail } from "react-icons/md";
 function Contact() {
     var size="50px";
     return (
-        <div>
+        <div id='contactPage'>
             <h1>Contact</h1>
             <div id='contactFormAll'>
                 <div id='contHeadContent'>

@@ -20,7 +20,7 @@ class Collection extends Component {
     render(){
     return (
         <>
-        <div>
+        <div id='collectionPage'>
             <h1>Colleciton</h1>
             <div id='categoryList'>
                 {this.state.data.map((data)=>(
