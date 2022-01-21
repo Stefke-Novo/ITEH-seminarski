@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import {Link,useHistory} from "react-router-dom"
+import "./AddTitle.css"
 function AddTitle() {
   const history = useHistory();
   const [loading, setLoading] = useState(true);
@@ -79,181 +80,114 @@ function AddTitle() {
   }
 
   return( 
-    <div className="AddTitlePage">
-    <div className="AddTitleCard">
-      <div className="AddTitleHeader">
-        <h1>Add Title</h1>
-      </div>
-      <form
-        encType="multipart/form-data"
-        onSubmit={submitTitle}
-        id="AddTitleForm"
-      >
-        <div className="tab-content " id="myTabContent">
-          <div
-            className="tab-pane fade show active"
-            id="home"
-            role="tabpanel"
-            aria-labelledby="home-tab"
-          >
-            {/* Home Tab Fields */}
-            <div className="form-group">
-              <label>Select Genre</label>
-              <select
-                name="genre_id"
-                onChange={handleInput}
-                value={titleInput.genre_id}
-                className="form-control"
-              >
-                <option>-- Select Genre --</option>
-                {genrelist.map((item) => {
-                  return (
-                    <option value={item.id} key={item.id}>
-                      {item.name}
-                    </option>
-                  );
-                })}
-              </select>
-              <span className="AddtitleError">{error.genre_id}</span>
-            </div>
-            <div className="form-group mb-3">
-              <label>Slug</label>
-              <input
-                type="text"
-                name="slug"
-                onChange={handleInput}
-                value={titleInput.slug}
-                className="form-control"
-              />
-              <span className="AddtitleError">{error.slug}</span>
-            </div>
-            <div className="form-group mb-3">
-              <label>Name</label>
-              <input
-                type="text"
-                name="name"
-                onChange={handleInput}
-                value={titleInput.name}
-                className="form-control"
-              />
-              <span className="AddtitleError">{error.name}</span>
-            </div>
-            <div className="form-group mb-3">
-              <label>Description</label>
-              <textarea
-                name="description"
-                onChange={handleInput}
-                value={titleInput.description}
-                className="form-control"
-              />
-            </div>
-            <div className="form-group mb-3">
-              <label>Status</label>
-              <input
-                type="checkbox"
-                name="status"
-                onChange={handleInput}
-                value={titleInput.status}
-              />
-            </div>
-          </div>
-
-          <div
-            className="tab-pane card-body border fade"
-            id="details"
-            role="tabpanel"
-            aria-labelledby="details-tab"
-          >
-            <div className="row ">
-              {/* Details Tab Fields */}
-
-              <div className="AddTitleRow">
-                <label>Author</label>
-                <input
-                  type="text"
-                  name="author"
-                  onChange={handleInput}
-                  value={titleInput.author}
-                  className="form-control"
-                />
-                <span className="AddtitleError">{error.author}</span>
-              </div>
-              <div className="AddTitleRow">
-                <label>Price</label>
-                <input type="text" name="price" onChange={handleInput} value={titleInput.price} className="form-control"/>
-                <span className="AddtitleError">{error.price}</span>
-              </div>
-              <div className="AddTitleRow">
-                <label>Rating</label>
-                <input
-                  type="text"
-                  name="rating"
-                  onChange={handleInput}
-                  value={titleInput.rating}
-                  className="form-control"
-                />
-                <span className="AddtitleError">{error.rating}</span>
-              </div>
-              <div className="AddTitleRow">
-                <label>Publisher</label>
-                <input
-                  type="text"
-                  name="publisher"
-                  onChange={handleInput}
-                  value={titleInput.publisher}
-                  className="form-control"
-                />
-                <span className="AddtitleError">{error.publisher}</span>
-              </div>
-              <div className="col-md-8 form-group mb-3 w-100 p-1">
-                <label>Image</label>
-                <input
-                  type="file"
-                  name="image"
-                  onChange={handleImage}
-                  className="form-control"
-                />
-                <span className="AddtitleError">{error.image}</span>
-              </div>
-              <div className="col-md-4 form-group mb-3">
-                <label>Featured</label>
-                <input
-                  type="checkbox"
-                  name="featured"
-                  onChange={handleInput}
-                  value={titleInput.featured}
-                  className="w-50 h-50"
-                />
-              </div>
-              <div className="col-md-4 form-group mb-3">
-                <label>Popular</label>
-                <input
-                  type="checkbox"
-                  name="popular"
-                  onChange={handleInput}
-                  value={titleInput.popular}
-                  className="w-50 h-50"
-                />
-              </div>
-              <div className="col-md-4 form-group mb-3">
-                <label>Status</label>
-                <input
-                  type="checkbox"
-                  name="status"
-                  onChange={handleInput}
-                  value={titleInput.status}
-                  className="w-50 h-50"
-                />
-              </div>
-            </div>
-          </div>
+    <div className="addTitlePage">
+      <div className="addTitleCard">
+        <div className="addTitleHeader">
+          <h1>Add Title</h1>
         </div>
-        <button type="submit" className="AddTitleBtn3">
-          Submit
-        </button>
-      </form>
+          <form onSubmit={submitTitle} id="addTitleForm">
+            <div id="addTitleData">
+              <div id='addTitleHome'>
+                {/* Home Tab Fields */}
+                <div className='addTitleGroup'>
+                  <div div className="addTitleField">
+                    <div className='addTitleGroupField'>
+                      <label>Select Genre</label>
+                      <select name="genre_id" onChange={handleInput} value={titleInput.genre_id} className="form-control">
+                        <option>-- Select Genre --</option>
+                        {genrelist.map((item) => {return (<option value={item.id} key={item.id}>{item.name}</option>);})}
+                      </select>
+                    </div>
+                    <span>{error.genre_id}</span>
+                  </div>
+                  <div className="addTitleField">
+                    <div className='addTitleGroupField'>
+                    <label>Slug</label>
+                    <input type="text" name="slug" onChange={handleInput} value={titleInput.slug} className="form-control"/>
+                    </div>
+                    <span>{error.slug}</span>
+                  </div>
+                  <div div className="addTitleField">
+                    <div className='addTitleGroupField'>
+                      <label>Name</label>
+                      <input type="text" name="name" onChange={handleInput} value={titleInput.name} className="form-control"/>
+                    </div>
+                    <span>{error.name}</span>
+                  </div>
+                </div>
+                <div className='addTitleGroup'>
+                  <div className="addTitleGroupField">
+                    <label>Description</label>
+                    <textarea name="description" onChange={handleInput} value={titleInput.description} className="form-control"/>
+                  </div>
+                  <div className="addTitleBtn">
+                    <label>Status</label>
+                    <input type="checkbox" name="status" onChange={handleInput} value={titleInput.status}/>
+                  </div>
+                </div>
+              </div>
+              <div id="addTitleDetails">
+                {/* Details Tab Fields */}
+
+                <div className='addTitleGroup'>
+                  <div className="addTitleField">
+                    <div className="addTitleGroupField">
+                      <label>Author</label>
+                      <input type="text" name="author" onChange={handleInput} value={titleInput.author} className="form-control" />
+                    </div>
+                    <span>{error.author}</span>
+                  </div>
+                  <div className="addTitleField">
+                    <div className="addTitleGroupField">
+                      <label>Publisher</label>
+                      <input type="text" name="publisher" onChange={handleInput} value={titleInput.publisher} className="form-control"/>
+                    </div>
+                    <span>{error.publisher}</span>
+                  </div>
+                  <div className="addTitleField">
+                    <div className="addTitleGroupField">
+                      <label>Price</label>
+                      <input type="text" name="price" onChange={handleInput} value={titleInput.price} />
+                    </div>
+                    <span>{error.price}</span>
+                  </div>
+                  <div className="addTitleField">
+                    <div className="addTitleGroupField">
+                      <label>Rating</label>
+                      <input type="text" name="rating" onChange={handleInput} value={titleInput.rating} className="form-control"/>
+                    </div>
+                    <span>{error.rating}</span>
+                  </div>
+                </div>
+                <div className='addTitleGroup'>
+                  <div className="addTitleField1">
+                    <div>
+                      <label>Image</label>
+                      <input type="file" name="image" onChange={handleImage} className="form-control"/>
+                    </div>
+                    <span id='AddTitleSpan'>{error.image}</span>
+                  </div>
+                  <div className="addTitleBtn">
+                    <label>Featured</label>
+                    <input type="checkbox" name="featured" onChange={handleInput} value={titleInput.featured} className="w-50 h-50"/>
+                  </div>
+                  <div className="addTitleBtn">
+                    <label>Popular</label>
+                    <input type="checkbox" name="popular" onChange={handleInput} value={titleInput.popular} className="w-50 h-50"/>
+                  </div>
+                  <div className="addTitleBtn">
+                    <label>Status</label>
+                    <input type="checkbox" name="status" onChange={handleInput} value={titleInput.status} className="w-50 h-50"/>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <button type="submit" className="AddTitleBtn3">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
   );
 }
 

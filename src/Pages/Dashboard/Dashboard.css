@@ -403,7 +403,7 @@
     font-size: 14px;
     color: var(--black2);
 }
-.dashboardRecentCustomers table tr:hover{
+.dashboardRecentCustomers table tr:hover {
     background:var(--blue);
     color:var(--white);
 }

@@ -1,0 +1,152 @@
+:root
+{
+    --blue: #287bff;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+}
+.addTitlePage{
+    height:93vh;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.addTitleCard{
+    height:80%;
+    width:80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-radius: 35px;
+}
+.addTitleHeader{
+    width:95%;
+    text-align: center;
+    font-size: 25px;
+    color: var(--blue);
+}
+#addTitleForm{
+    width:95%;
+    margin-left: auto;
+    margin-right: auto;
+    height:80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#addTitleData{
+    width:100%;
+    height:90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+#addTitleData span{
+    color:red;
+    max-width: 300px;
+}
+#addTitleHome{
+    border:1px solid var(--blue);
+    border-radius: 15px;
+    height:50%;
+    width:100%;
+    display: flex;
+    margin-bottom: 20px;
+}
+#addTitleDetails{
+    border:1px solid var(--blue);
+    border-radius: 15px;
+    height:50%;
+    width:100%;
+    display: flex;
+}
+.addTitleGroup{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.addTitleField{
+    width:100%;
+    text-align: center;
+    height:33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.addTitleField span{
+    margin-left: 20%;
+}
+.addTitleGroupField{
+    height:50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    min-width: 50%;
+    width:70%;
+}
+.addTitleGroupField label{
+    font-size: 20px;
+    white-space: nowrap;
+}
+.addTitleGroupField input,.addTitleGroupField select{
+    height:60%;
+    font-size: 15px;
+    text-align: center;
+    width:70%;
+    outline: transparent;
+    transition: 0.5s;
+    border-radius: 5px;border-width: 0.5px;
+}
+.addTitleGroupField textarea:hover,.addTitleGroupField input:focus,.addTitleGroupField select:focus{
+    outline:0.5px solid var(--blue);
+}
+.addTitleGroupField textarea{
+    height:100%;
+    width: 70%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+    border-radius: 5px;border-width: 0.5px;
+}
+.addTitleBtn{
+    width:50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100px;
+}
+.addTitleField1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.addTitleField1 span{
+    margin-right: 80px;
+}
+.AddTitleBtn3{
+    margin-top: 20px;
+    font-size: 25px;
+    padding: 10px 80px;
+    border:none;
+    background: var(--grey);
+    color: var(--black2);
+    border-radius: 15px;
+    transition: 0.5s;
+}
+.AddTitleBtn3:hover{
+    color:white;
+    background: var(--blue);
+}

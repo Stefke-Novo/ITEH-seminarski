@@ -85,3 +85,15 @@
     background: var(--blue);
     color: var(--white);
 }
+.showTitleTable tbody tr td button{
+    font-size: 25px;
+    background: var(--grey);
+    color:var(--black2);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0,0 , 0.08);
+    transition: 0.5s;
+}
+.showTitleTable tbody tr td button:hover{
+    background: red;
+    color: var(--white);
+}

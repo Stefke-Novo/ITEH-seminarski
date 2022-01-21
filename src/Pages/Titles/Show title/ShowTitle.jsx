@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import "./ShowTitle.css";
+import swal from 'sweetalert';
 function ShowTitle() {
 
   const[loading,setLoading]=useState(true);
@@ -18,20 +19,20 @@ useEffect(()=>{
         });
 },[]);
 
-// const deleteTitle=(e,id)=>{
-//     e.preventDefault();
-//     const clicked=e.currentTarget;
-//     clicked.innerText="Deleting";
-//     axios.delete(`/api/delete-title/${id}`).then(res=>{
-//         if(res.data.status===200){
-//             swal("Success",res.data.message,"success");
-//             clicked.closest('tr').remove();
-//         }else if(res.data.status===404){
-//             swal("Success",res.data.message,"success");
-//             clicked.innerText="Delete";
-//         }
-//     });
-// }
+ const deleteTitle=(e,id)=>{
+     e.preventDefault();
+     const clicked=e.currentTarget;
+     clicked.innerText="Deleting";
+     axios.delete(`http://localhost:8000/api/delete-title/${id}`).then(res=>{
+         if(res.data.status===200){
+             swal("Success",res.data.message,"success");
+             clicked.closest('tr').remove();
+         }else if(res.data.status===404){
+             swal("Success",res.data.message,"success");
+             clicked.innerText="Delete";
+         }
+     });
+ }
 
 var titleStatus='';
 var showtitle_HTMLTABLE="";
@@ -55,7 +56,7 @@ if(loading){
                     <Link to={`edit-title/${item.id}`} className="">Edit</Link>
                 </td>
                 <td>
-                    {/* <button type="button" onClick={(e)=>deleteTitle(e,item.id)} className="btn btn-danger btn-sm=">Delete</button> */}
+                    <button type="button" onClick={(e)=>deleteTitle(e,item.id)} className="btn btn-danger btn-sm=">Delete</button>
                     {titleStatus}
                 </td>
             </tr>

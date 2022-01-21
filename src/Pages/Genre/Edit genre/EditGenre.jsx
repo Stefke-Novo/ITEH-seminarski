@@ -63,32 +63,32 @@ function EditGenre(props) {
   <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
 </li>
 </ul>
-<div className="tab-content" id="myTabContent">
-<div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-<div className="form-group mb-3">
+<div >
+<div >
+<div >
         <label>Slug</label>
-        <input type="text" name="slug" onChange={handleInput} value={genreInput.slug} className="form-control" />
-        <span className="text-danger">{error.slug}</span>
+        <input type="text" name="slug" onChange={handleInput} value={genreInput.slug}  />
+        <span >{error.slug}</span>
       </div>
-      <div className="form-group mb-3">
+      <div >
         <label>Name</label>
-        <input type="text" name="name" onChange={handleInput} value={genreInput.name} className="form-control" />
-        <span className="text-danger">{error.name}</span>
+        <input type="text" name="name" onChange={handleInput} value={genreInput.name}  />
+        <span >{error.name}</span>
       </div>
-      <div className="form-group mb-3">
+      <div >
         <label>Description</label>
-        <textarea name="description" onChange={handleInput} value={genreInput.description} className="form-control" />
+        <textarea name="description" onChange={handleInput} value={genreInput.description}  />
       </div>
-      <div className="form-group mb-3">
+      <div >
         <label>Status</label>
         <input type="checkbox" name="status" onChange={handleInput} value={genreInput.status}/>
-        <span className="text-danger">{error.status}</span>
+        <span >{error.status}</span>
       </div>
     </div>
 </div>
-<Link to="/admin/show-genre" className="btn btn-primary mb-3 px-4 float-start">Back</Link>
+<Link to="/admin/show-genre" >Back</Link>
 
-<button type="submit" className="btn btn-primary px-4 float-end">Update</button>
+<button type="submit" >Update</button>
 </form>
   </div>
   );
