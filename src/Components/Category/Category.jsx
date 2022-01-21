@@ -1,22 +1,19 @@
 import React,{useEffect,useState} from 'react'
 import "./Category.css"
-import {useRouteMatch,Link} from "react-router-dom"
+import {useRouteMatch,Link, Route} from "react-router-dom"
 import axios from "axios"
 import BookCard from '../Book card/BookCard';
+import Book from '../../Pages/Book/Book';
 function Category({path}) {
     const [titles,setTitles]=useState([]);
     const [category,setCategory]=useState({});
     let route = useRouteMatch();
-    console.log(route);
     useEffect(() => {
         axios.get(`http://localhost:8000/api/get-title/${route.params.slug}`).then(
         (res)=>{setTitles(res.data.title_data.title);
-        console.log(res.data);
         setCategory(res.data.title_data.genre);    
-        console.log(res.data.title_data.title);
     });
     }, []);
-    console.log(path);
     return (
         <div className='category'>
             <p>{category.name}</p>
@@ -26,6 +23,8 @@ function Category({path}) {
                 ))}
             </div>
             <Link to={`${path}`}>Back</Link>
+            <Route path="/collection/:slug/:slug" component={Book}>
+            </Route>
         </div>
     )
 }

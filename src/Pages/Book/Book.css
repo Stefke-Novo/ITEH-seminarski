@@ -1,0 +1,7 @@
+#bookPage{
+    height: 100vh;
+    background:white;
+    position: absolute;
+    z-index: 1;
+    width:100%;
+}

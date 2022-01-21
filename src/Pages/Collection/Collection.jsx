@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import "./Collection.css"
 import axios from "axios"
-import { Link, Switch,Route } from 'react-router-dom'
+import { Switch,Route } from 'react-router-dom'
 import Category from '../../Components/Category/Category'
 import CategoryCard from '../../Components/Category card/CategoryCard'
+import Book from '../Book/Book';
 class Collection extends Component {
     constructor(props){
         super(props)
@@ -26,9 +27,9 @@ class Collection extends Component {
                     <CategoryCard key={data.id} slug={`/collection/${data.slug}`} name={data.name} description={data.description}/>
                 ))}
             </div>
-                <Route path="/collection/:slug">
-                    <Category path={"/collection"}/>
-                </Route>
+                    <Route path="/collection/:slug">
+                        <Category path={"/collection"}/>
+                    </Route>
         </div>
     )
     }
