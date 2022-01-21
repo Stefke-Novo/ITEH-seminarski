@@ -5,7 +5,6 @@ function Contact() {
     var size="50px";
     return (
         <div id='contactPage'>
-            <h1>Contact</h1>
             <div id='contactFormAll'>
                 <div id='contHeadContent'>
                     <h1>Contact us</h1>
