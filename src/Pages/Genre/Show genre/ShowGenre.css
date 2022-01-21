@@ -1,0 +1,110 @@
+:root
+{
+    --blue: #287bff;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+}
+.showGenrePage{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5%;
+    margin-left: -5%;
+}
+.showGenreCard{
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    min-height: 70%;
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.showGenreHeader{
+    width:100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height:20%;
+}
+.showGenreHeader h4{
+    font-size: 40px;
+    font-weight: 500;
+    color:var(--blue);
+}
+.showGenreHeader a{
+    width: 150px;
+    text-align: center;
+    margin-right: -30px;
+    background: var(--blue);
+    text-decoration:none;
+    color:var(--white);
+    font-size: 20px;
+    padding: 15px 20px;
+    border-radius: 15px;
+}
+.showGenreHeader a:hover{
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background: var(--white);
+    color:var(--blue);
+    border:1px solid rgba(0, 0, 0, 0.05);
+}
+.showGenreHeader div{
+    width: 100px;
+}
+.showGenreBody{
+    width:100%;
+    height:80%;
+    display: flex;
+    justify-content: center;
+}
+.showGenreBody table{
+    height: 100%;
+    width:90%;
+    text-align: center;
+}
+.showGenreBody table thead tr th{
+    padding: 20px 10px; 
+    font-size: 22px;
+}
+.showGenreBody table thead tr th,
+.showGenreBody table tbody tr td{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.showGenreBody table tbody tr td{
+    font-size: 17px;
+}
+.showGenreBody table tbody tr td .showGenreEditBtn{
+    text-decoration:none;
+    color:var(--black2);
+    font-size: 25px;
+    background: var(--grey);
+    padding: 5px 20px;
+    border-radius: 8px;
+    transition: 0.5s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 0.5px solid rgba(0, 0, 0, 0.01);
+}
+.showGenreBody table tbody tr td .showGenreEditBtn:hover{
+    background: var(--blue);
+    color: var(--white);
+}
+.showGenreBody table tbody tr td .showGenreDeleteBtn{
+    font-size: 25px;
+    padding: 5px 20px;
+    border:none;
+    background-color:#f5f5f5;
+    color:var(--blue);
+    border-radius: 8px;
+    transition: 0.5s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 0.5px solid rgba(0, 0, 0, 0.01);
+}
+.showGenreBody table tbody tr td .showGenreDeleteBtn:hover{
+    background:var(--blue);
+    color: white;
+}

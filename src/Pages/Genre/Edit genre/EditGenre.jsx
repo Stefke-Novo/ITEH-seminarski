@@ -19,7 +19,7 @@ function EditGenre(props) {
                setGenre(res.data.genre);
            }else if(res.data.status===404){
                 swal("Error",res.data.message,"error");
-                history.push('http://localhost:8000/admin/show-genre');
+                history.push('/admin/show-genre');
            }
            setLoading(false);
         });

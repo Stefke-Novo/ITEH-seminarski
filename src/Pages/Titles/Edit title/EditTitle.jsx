@@ -54,7 +54,7 @@ function EditTitle(props) {
         setAllcheckbox(res.data.title);
       } else if (res.data.status === 404) {
         swal("Error", res.data.message, "error");
-        history.push("http://localhost:8000/admin/show-title");
+        history.push("/admin/show-title");
       }
       setLoading(false);
     });

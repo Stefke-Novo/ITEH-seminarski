@@ -19,7 +19,6 @@ class Collection extends Component {
     }
     render(){
     return (
-        <>
         <div id='collectionPage'>
             <h1>Colleciton</h1>
             <div id='categoryList'>
@@ -31,7 +30,6 @@ class Collection extends Component {
                     <Category path={"/collection"}/>
                 </Route>
         </div>
-        </>
     )
     }
 }

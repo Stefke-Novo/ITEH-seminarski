@@ -5,3 +5,7 @@
     flex-wrap: wrap;
     transform-style: preserve-3d;
 }
+#collectionPage{
+    z-index: 1;
+    background-color: white;
+}

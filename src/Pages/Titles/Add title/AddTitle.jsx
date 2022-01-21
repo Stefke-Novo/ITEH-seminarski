@@ -56,7 +56,7 @@ function AddTitle() {
         if (res.data.status === 200) {
           swal("Success", res.data.message, "success");
           setError([]);
-          history.push("http://localhost:8000/admin/show-title");
+          history.push("/admin/show-title");
         } else if (res.data.status === 422) {
           swal("Warning", "Fill in all required fields!", "warning");
           setError(res.data.errors);
@@ -79,46 +79,16 @@ function AddTitle() {
   }
 
   return( 
-    <div className="container-fluid px-4">
-    <div className="card mt-4">
-      <div className="card-header"></div>
-      <h1 className="mt-4">Add Title</h1>
+    <div className="AddTitlePage">
+    <div className="AddTitleCard">
+      <div className="AddTitleHeader">
+        <h1>Add Title</h1>
+      </div>
       <form
         encType="multipart/form-data"
         onSubmit={submitTitle}
-        id="title_form"
+        id="AddTitleForm"
       >
-        <ul className="nav nav-tabs" id="myTab" role="tablist">
-          <li className="nav-item" role="presentation">
-            <button
-              className="nav-link active"
-              id="home-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#home"
-              type="button"
-              role="tab"
-              aria-controls="home"
-              aria-selected="true"
-            >
-              Home
-            </button>
-          </li>
-          <li className="nav-item" role="presentation">
-            <button
-              className="nav-link"
-              id="details-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#details"
-              type="button"
-              role="tab"
-              aria-controls="details"
-              aria-selected="false"
-            >
-              Details
-            </button>
-          </li>
-        </ul>
-
         <div className="tab-content " id="myTabContent">
           <div
             className="tab-pane fade show active"
@@ -144,7 +114,7 @@ function AddTitle() {
                   );
                 })}
               </select>
-              <span className="text-danger">{error.genre_id}</span>
+              <span className="AddtitleError">{error.genre_id}</span>
             </div>
             <div className="form-group mb-3">
               <label>Slug</label>
@@ -155,7 +125,7 @@ function AddTitle() {
                 value={titleInput.slug}
                 className="form-control"
               />
-              <span className="text-danger">{error.slug}</span>
+              <span className="AddtitleError">{error.slug}</span>
             </div>
             <div className="form-group mb-3">
               <label>Name</label>
@@ -166,7 +136,7 @@ function AddTitle() {
                 value={titleInput.name}
                 className="form-control"
               />
-              <span className="text-danger">{error.name}</span>
+              <span className="AddtitleError">{error.name}</span>
             </div>
             <div className="form-group mb-3">
               <label>Description</label>
@@ -197,7 +167,7 @@ function AddTitle() {
             <div className="row ">
               {/* Details Tab Fields */}
 
-              <div className="col-md-4 form-group mb-3 w-75 p-3">
+              <div className="AddTitleRow">
                 <label>Author</label>
                 <input
                   type="text"
@@ -206,20 +176,14 @@ function AddTitle() {
                   value={titleInput.author}
                   className="form-control"
                 />
-                <span className="text-danger">{error.author}</span>
+                <span className="AddtitleError">{error.author}</span>
               </div>
-              <div className="col-md-4 form-group mb-3 w-75 p-3">
+              <div className="AddTitleRow">
                 <label>Price</label>
-                <input
-                  type="text"
-                  name="price"
-                  onChange={handleInput}
-                  value={titleInput.price}
-                  className="form-control"
-                />
-                <span className="text-danger">{error.price}</span>
+                <input type="text" name="price" onChange={handleInput} value={titleInput.price} className="form-control"/>
+                <span className="AddtitleError">{error.price}</span>
               </div>
-              <div className="col-md-4 form-group mb-3 w-75 p-3">
+              <div className="AddTitleRow">
                 <label>Rating</label>
                 <input
                   type="text"
@@ -228,9 +192,9 @@ function AddTitle() {
                   value={titleInput.rating}
                   className="form-control"
                 />
-                <span className="text-danger">{error.rating}</span>
+                <span className="AddtitleError">{error.rating}</span>
               </div>
-              <div className="col-md-4 form-group mb-3 w-75 p-3">
+              <div className="AddTitleRow">
                 <label>Publisher</label>
                 <input
                   type="text"
@@ -239,7 +203,7 @@ function AddTitle() {
                   value={titleInput.publisher}
                   className="form-control"
                 />
-                <span className="text-danger">{error.publisher}</span>
+                <span className="AddtitleError">{error.publisher}</span>
               </div>
               <div className="col-md-8 form-group mb-3 w-100 p-1">
                 <label>Image</label>
@@ -249,7 +213,7 @@ function AddTitle() {
                   onChange={handleImage}
                   className="form-control"
                 />
-                <span className="text-danger">{error.image}</span>
+                <span className="AddtitleError">{error.image}</span>
               </div>
               <div className="col-md-4 form-group mb-3">
                 <label>Featured</label>
@@ -284,7 +248,7 @@ function AddTitle() {
             </div>
           </div>
         </div>
-        <button type="submit" className="btn btn-primary px-4 mt-4">
+        <button type="submit" className="AddTitleBtn3">
           Submit
         </button>
       </form>

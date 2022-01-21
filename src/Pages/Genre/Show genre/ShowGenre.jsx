@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useHistory} from "react-router-dom";
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
+import "./ShowGenre.css";
 function ShowGenre() {
   const[loading,setLoading]=useState(true);
   const[genrelist,setGenrelist]=useState([]);
@@ -20,7 +21,7 @@ const deleteGenre=(e,id)=>{
     e.preventDefault();
     const clicked=e.currentTarget;
     clicked.innerText="Deleting";
-    axios.delete(`/api/delete-genre/${id}`).then(res=>{
+    axios.delete(`http://localhost:8000/api/delete-genre/${id}`).then(res=>{
         if(res.data.status===200){
             swal("Success",res.data.message,"success");
             clicked.closest('tr').remove();
@@ -43,25 +44,25 @@ if(loading){
                 <td>{item.slug}</td>
                 <td>{item.status}</td>
                 <td>
-                    <Link to={`edit-genre/${item.id}`} className="btn btn-success btn-sm=">Edit</Link>
+                    <Link to={`edit-genre/${item.id}`} className="showGenreEditBtn">Edit</Link>
                 </td>
                 <td>
-                    <button type="button" onClick={(e)=>deleteGenre(e,item.id)} className="btn btn-danger btn-sm=">Delete</button>
+                    <button clatype="button" onClick={(e)=>deleteGenre(e,item.id)} className="showGenreDeleteBtn">Delete</button>
                 </td>
             </tr>
         )
     });
 }
   return (
-    <div className="container px-4">
+    <div className="showGenrePage">
        
-          <div className="card mt-4">
-          <div className="vard-header">
-                <h4>Genre List
-                    <Link to="/admin/add-genre" className="btn btn-primary btn-sm float-end">Add Genre</Link>
-                </h4>
+          <div className="showGenreCard">
+          <div className="showGenreHeader">
+              <div></div>
+                <h4>Genre List</h4>
+                <Link to="/admin/add-genre" className="btn btn-primary btn-sm float-end">Add Genre</Link>
           </div>
-          <div className="card-body">
+          <div className="showGenreBody">
                 <table className="table table-bordered table-striped">
                     <thead>
                         <tr>

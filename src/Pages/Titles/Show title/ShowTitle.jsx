@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import "./ShowTitle.css"
+import "./ShowTitle.css";
 function ShowTitle() {
 
   const[loading,setLoading]=useState(true);
@@ -52,7 +52,7 @@ if(loading){
                 <td>{item.author}</td>
                 <td><img src={`http://localhost:8000/${item.image}`} width="50px"alt={item.name}/></td>
                 <td>
-                    <Link to={`edit-title/${item.id}`} className="btn btn-success btn-sm=">Edit</Link>
+                    <Link to={`edit-title/${item.id}`} className="">Edit</Link>
                 </td>
                 <td>
                     {/* <button type="button" onClick={(e)=>deleteTitle(e,item.id)} className="btn btn-danger btn-sm=">Delete</button> */}
@@ -64,17 +64,14 @@ if(loading){
 }
 
   return (
-  <div className="container px-4 mt-3">
+  <div className="showTitlePage">
        
-  <div className="card">
-  <div className="card-header">
-        <h4>Title List
-            <Link to="/admin/add-title" className="btn btn-primary btn-sm float-end">Add Title</Link>
-        </h4>
-  </div>
-  <div className="card-body">
-      <div className="table-responsive">
-        <table className="table table-bordered table-striped">
+    <div className="showTitleCard">
+        <div className="showTitleHeader">
+                <h4>Title List</h4>
+                <Link to="/admin/add-title" className="">Add Title</Link>
+        </div>
+        <table className="showTitleTable">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -90,9 +87,7 @@ if(loading){
             {showtitle_HTMLTABLE}
             </tbody>
         </table>
-        </div>
-  </div>
-</div>
+    </div>
 </div>
     );
 }

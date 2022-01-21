@@ -1,0 +1,101 @@
+:root
+{
+    --blue: #287bff;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+}
+.addGenrePage{
+    min-height:93.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#addGenreForm{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width:60%;
+    height:60vh;
+    margin-top: -100px;
+    margin-left: -100px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+#addGenreForm h1{
+    color:var(--blue);
+    letter-spacing: 0.8px;
+    font-size: 50px;
+}
+.addGenreRow{
+    width:80%;
+    height:70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.addGenreRow div{
+    height:40px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.addGenreRow div input{
+    font-size: larger;
+    text-align: center;
+    
+}
+.addGenreRow div label{
+    margin-right: 7px;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 20px;
+}
+.addGenreRow small{
+    height:30px;
+    text-align: center;
+    padding-left: 50px;
+    font-weight: 500;
+    font-size: 15px;
+    color:red;
+}
+#addGenreDescription{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#addGenreDescription label{
+    margin-right: 7px;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 20px;
+}
+#addGenreDescription textarea{
+    height:60px;
+    width:500px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.addGenreStatus{
+    height:80px;
+    width:80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.addGenreBtn2{
+    font-size: 20px;
+    padding:5px 30px;
+    border-radius: 8px;
+    border:none;
+    color:var(--blue);
+    transition: 0.5s;
+}
+.addGenreBtn2:hover{
+    background: var(--blue);
+    color:white;
+}

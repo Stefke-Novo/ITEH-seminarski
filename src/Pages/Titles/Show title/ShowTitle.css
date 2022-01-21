@@ -1,0 +1,87 @@
+:root
+{
+    --blue: #287bff;
+    --white:#fff;
+    --grey:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
+}
+.showTitlePage{
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.showTitleCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:75%;
+    margin-top: 50px;
+    box-shadow: 0px 10px 25px rgba(0, 0,0 , 0.08);
+    margin-bottom: 50px;
+    border-radius: 30px;
+}
+.showTitleHeader{
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content: space-evenly;
+    height:150px;
+}
+.showTitleHeader h4{
+    font-size: 40px;
+    font-weight: 500;
+    color:var(--blue);
+}
+.showTitleHeader a{
+    font-size: 25px;
+    font-weight: 400;
+    color:var(--black2);
+    background: var(--grey);
+    text-decoration: none;
+    padding:5px 20px;
+    border-radius: 15px;
+    transition:0.5s;
+    box-shadow: 0px 10px 25px rgba(0, 0,0 , 0.08);
+    border: 1px solid rgba(0, 0,0 , 0.04);
+}
+.showTitleHeader a:hover{
+    color: var(--white);
+    background-color: var(--blue);
+}
+.showTitleTable{
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align:center;
+}
+.showTitleTable thead tr th,
+.showTitleTable tbody tr td{
+    width:500px;
+    border-bottom: 1px solid rgba(0, 0,0 , 0.1);
+}
+.showTitleTable thead tr th{
+    font-size: 25px;
+    padding: 10px 0;
+}
+.showTitleTable tbody tr td{
+    font-size: 20px;
+    height: 100px;
+}
+.showTitleTable tbody tr td a{
+    background: var(--grey);
+    color: var(--black2);
+    text-decoration: none;
+    font-size: 25px;
+    padding: 5px 20px;
+    transition:0.5s;
+    border-radius:8px;
+    box-shadow: 0 10px 25px rgba(0, 0,0 , 0.1);
+}
+.showTitleTable tbody tr td a:hover{
+    background: var(--blue);
+    color: var(--white);
+}
