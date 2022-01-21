@@ -3,6 +3,7 @@ import "./EditGenre.css"
 import axios from 'axios';
 import swal from 'sweetalert';
 import {useHistory,Link,useRouteMatch} from 'react-router-dom';
+import "./EditGenre.css";
 function EditGenre(props) {
   const history=useHistory();
     const[loading,setLoading]=useState(true);
@@ -56,41 +57,42 @@ function EditGenre(props) {
 
 
   return (
-    <div className="container px-4">
-    <form onSubmit={updateGenre}>
-<ul className="nav nav-tabs" id="myTab" role="tablist">
-<li className="nav-item" role="presentation">
-  <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
-</li>
-</ul>
-<div >
-<div >
-<div >
-        <label>Slug</label>
-        <input type="text" name="slug" onChange={handleInput} value={genreInput.slug}  />
-        <span >{error.slug}</span>
-      </div>
-      <div >
-        <label>Name</label>
-        <input type="text" name="name" onChange={handleInput} value={genreInput.name}  />
-        <span >{error.name}</span>
-      </div>
-      <div >
-        <label>Description</label>
-        <textarea name="description" onChange={handleInput} value={genreInput.description}  />
-      </div>
-      <div >
-        <label>Status</label>
-        <input type="checkbox" name="status" onChange={handleInput} value={genreInput.status}/>
-        <span >{error.status}</span>
-      </div>
+    <div className="editGenrePage">
+      <form onSubmit={updateGenre} id='editGenreForm'>
+        <div id='editGenreFields' >
+          <h1>Edit Genre</h1>
+          <div className='editGenreField' >
+            <div>
+              <label>Slug</label>
+              <input type="text" name="slug" onChange={handleInput} value={genreInput.slug}  />
+            </div>
+            <span >{error.slug}</span>
+          </div>
+          <div className='editGenreField'>
+            <div>
+              <label>Name</label>
+              <input type="text" name="name" onChange={handleInput} value={genreInput.name}  />
+            </div>
+            <span >{error.name}</span>
+          </div>
+          <div className='editGenreField'>
+            <div>
+              <label>Description</label>
+              <textarea name="description" onChange={handleInput} value={genreInput.description}  />
+            </div>
+          </div>
+          <div className='editGenreField1'>
+            <label>Status</label>
+            <input type="checkbox" name="status" onChange={handleInput} value={genreInput.status}/>
+            <span >{error.status}</span>
+          </div>
+        </div>
+        <div id='editGenreBtns'>
+          <button type="submit" >Update</button>
+          <Link to="/admin/show-genre" >Back</Link>
+        </div>
+      </form>
     </div>
-</div>
-<Link to="/admin/show-genre" >Back</Link>
-
-<button type="submit" >Update</button>
-</form>
-  </div>
   );
 }
 
