@@ -11,9 +11,10 @@ function Category({path}) {
     useEffect(() => {
         axios.get(`http://localhost:8000/api/get-title/${route.params.slug}`).then(
         (res)=>{setTitles(res.data.title_data.title);
-        setCategory(res.data.title_data.genre);    
+        setCategory(res.data.title_data.genre); 
+        console.log(res.data);   
     });
-    }, []);
+    }, [route.params.slug]);
     return (
         <div className='category'>
             <p>{category.name}</p>
@@ -23,8 +24,7 @@ function Category({path}) {
                 ))}
             </div>
             <Link to={`${path}`}>Back</Link>
-            <Route path="/collection/:slug/:slug" component={Book}>
-            </Route>
+            <Route path="/collections/:slug/:slug" component={Book}/>
         </div>
     )
 }

@@ -26,7 +26,7 @@ function MainMenu() {
                     <Link to="/contact">Contact</Link>
                 </li>
                 <li>
-                    <Link to="/collection">Collection</Link>
+                    <Link to="/collections">Collection</Link>
                 </li>
                 <li>
                     <Link to="/login">Login</Link>
@@ -43,7 +43,7 @@ function MainMenu() {
             <Route  path="/aboutus">
                 <AboutUs/>
             </Route>
-            <Route  path="/collection">
+            <Route  path="/collections">
                 <Collection/>
             </Route>
             <Route  path="/contact">

@@ -12,7 +12,7 @@ function BookCard({name,description,slug,image,url}) {
                     <div>
                         <h2>{name}</h2>
                         <p>{description}</p>
-                        <button><Link to={`${url}/${slug}`}>Detaljnije</Link></button>
+                        <button><Link to={`${url}/${slug}`}>More</Link></button>
                     </div>
                 </div>
             </div>

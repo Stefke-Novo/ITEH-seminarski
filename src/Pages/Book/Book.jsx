@@ -3,6 +3,7 @@ import "./Book.css";
 import axios from 'axios';
 import swal from 'sweetalert';
 import {useHistory,Link} from "react-router-dom"
+
 function Book({match}) {
   const history=useHistory();
     const [loading,setLoading]=useState(true);
@@ -13,15 +14,11 @@ function Book({match}) {
 
     useEffect(()=>{
         const title_slug=match.params.slug;
-        console.log(match.params.slug);
-        console.log("title_slug: "+title_slug);
         axios.get(`http://localhost:8000/api/get-title/${title_slug}`).then(res=>{
-          console.log("res.data: "+res.data);
             if(res.data.status===200){
                 settitle(res.data.title_data.title);
                 setGenre(res.data.title_data.genre);
                 setLoading(false);
-                console.log("res: "+res);
             }
             else if(res.data.status===400){
                 swal("Warning",res.data.message,"error");

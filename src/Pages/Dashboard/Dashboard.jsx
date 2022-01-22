@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import "./Dashboard.css"
 import { Link,Route,Switch } from 'react-router-dom'
 import {IoAtCircleOutline,
@@ -13,7 +13,8 @@ import {IoAtCircleOutline,
         IoSearchOutline,
         IoChatbubblesOutline,
         IoWalletOutline,
-        IoCartOutline
+        IoCartOutline,
+        IoArrowForwardOutline
         } from "react-icons/io5";
         import {
             Chart as ChartJS,
@@ -36,7 +37,7 @@ class Dashboard extends React.Component {
         super()
         this.state={
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Music', 'Thriller', 'Historical', 'Graphic Novels', 'Fantasy', 'Art'],
                 datasets: [
                   {
                     label: '# of Votes',
@@ -114,11 +115,11 @@ class Dashboard extends React.Component {
                                 <span className='title'>Add title</span>
                             </Link>
                         </li>
-                        <h2 className='title1'>Go to site</h2>
+                        <h2 className='title1'>Home Page</h2>
                         <li>
                             <Link to="/home">
                                 <span className='icon'><IoLogOutOutline/></span>
-                                <span className='title'>Site</span>
+                                <span className='title'>Exit</span>
                             </Link>
                         </li>
                     </ul>
@@ -145,17 +146,17 @@ class Dashboard extends React.Component {
                         <div className='dashboardCardBox'>
                             <div className='dashboardCard'>
                                 <div>
-                                    <div className='dashboardNumbers'>1234</div>
+                                    <div className='dashboardNumbers'>756</div>
                                     <div className='dashboardCardName'>Daily Views</div>
                                 </div>
                                 <div className='dashboardIconBx'><IoEyeOutline/> </div>
                             </div>
                             <div className='dashboardCard'>
                                 <div>
-                                    <div className='dashboardNumbers'>80</div>
-                                    <div className='dashboardCardName'>Sales</div>
+                                    <div className='dashboardNumbers'>83</div>
+                                    <div className='dashboardCardName'>Leads</div>
                                 </div>
-                                <div className='dashboardIconBx'><IoCartOutline/> </div>
+                                <div className='dashboardIconBx'><IoArrowForwardOutline/> </div>
                             </div>
                             <div className='dashboardCard'>
                                 <div>
@@ -166,8 +167,8 @@ class Dashboard extends React.Component {
                             </div>
                             <div className='dashboardCard'>
                                 <div>
-                                    <div className='dashboardNumbers'>$7,842</div>
-                                    <div className='dashboardCardName'>Earning</div>
+                                    <div className='dashboardNumbers'>23,579din</div>
+                                    <div className='dashboardCardName'>Sponsorships</div>
                                 </div>
                                 <div className='dashboardIconBx'><IoWalletOutline/> </div>
                             </div>
@@ -180,83 +181,83 @@ class Dashboard extends React.Component {
                         <div className='dashboardDetails'>
                             <div className='dashboardRecentOrders'>
                                 <div className='dashboardCardHeader'>
-                                    <h2>Recent orders</h2>
+                                    <h2>Recent activity</h2>
                                     <Link to="/" className='dashboardBtn'>View all</Link>
                                 </div>
                                 <table >
                                     <thead>
                                         <tr>
                                         <td>Name</td>
-                                        <td>Price</td>
-                                        <td>Payment</td>
+                                        <td>Rating</td>
+                                        <td>Popularity</td>
                                         <td>Status</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Star Refrigerator</td>
-                                            <td>$1200</td>
-                                            <td>Paid</td>
+                                            <td>Gone Girl</td>
+                                            <td>8.4</td>
+                                            <td>Medium</td>
                                             <td><span className='dashboardStatus dashboardDelivered'>delivered</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Window Coolers</td>
-                                            <td>$620</td>
-                                            <td>Paid</td>
+                                            <td>Mo Dao Zu Shi</td>
+                                            <td>9.8</td>
+                                            <td>High</td>
                                             <td><span className='dashboardStatus dashboardReturn'>Return</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Speakers</td>
-                                            <td>$6000</td>
-                                            <td>Due</td>
+                                            <td>Sapiens</td>
+                                            <td>9.3</td>
+                                            <td>High</td>
                                             <td><span className='dashboardStatus dashboardPending'>Pending</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Hp Laptop</td>
-                                            <td>$6000</td>
-                                            <td>Due</td>
+                                            <td>A Game of Thrones</td>
+                                            <td>9.0</td>
+                                            <td>Very High</td>
                                             <td><span className='dashboardStatus dashboardInProgress'>In Progress</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Star Refrigerator</td>
-                                            <td>$1200</td>
-                                            <td>Paid</td>
+                                            <td>The Wheel of Time</td>
+                                            <td>9.2</td>
+                                            <td>Low</td>
                                             <td><span className='dashboardStatus dashboardDelivered'>delivered</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Window Coolers</td>
-                                            <td>$620</td>
-                                            <td>Paid</td>
+                                            <td>The Silent Patient</td>
+                                            <td>9.0</td>
+                                            <td>Medium</td>
                                             <td><span className='dashboardStatus dashboardReturn'>Return</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Speakers</td>
-                                            <td>$6000</td>
-                                            <td>Due</td>
+                                            <td>Scar Tissue</td>
+                                            <td>8.8</td>
+                                            <td>High</td>
                                             <td><span className='dashboardStatus dashboardPending'>Pending</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Hp Laptop</td>
-                                            <td>$6000</td>
-                                            <td>Due</td>
+                                            <td>Uzumaki</td>
+                                            <td>7.0</td>
+                                            <td>Low</td>
                                             <td><span className='dashboardStatus dashboardInProgress'>In Progress</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Star Refrigerator</td>
-                                            <td>$1200</td>
-                                            <td>Paid</td>
+                                            <td>Batman: Day One</td>
+                                            <td>6.3</td>
+                                            <td>Medium</td>
                                             <td><span className='dashboardStatus dashboardDelivered'>delivered</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Window Coolers</td>
-                                            <td>$620</td>
-                                            <td>Paid</td>
+                                            <td>The Demon Cycle</td>
+                                            <td>7.8</td>
+                                            <td>High</td>
                                             <td><span className='dashboardStatus dashboardReturn'>Return</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Speakers</td>
-                                            <td>$6000</td>
-                                            <td>Due</td>
+                                            <td>Inside Out</td>
+                                            <td>7.9</td>
+                                            <td>Low</td>
                                             <td><span className='dashboardStatus dashboardPending'>Pending</span></td>
                                         </tr>
                                     </tbody>
@@ -264,44 +265,44 @@ class Dashboard extends React.Component {
                             </div>
                             <div className='dashboardRecentCustomers'>
                                 <div className='dashboardCardHeader'>
-                                    <h2>Recent customers</h2>
+                                    <h2>Recent visitors</h2>
                                 </div>
                                 <table>
                                     <tr>
                                         <td width={"60px"}><div className='dashboardImgBx'><img src="" alt="" /></div></td>
-                                        <td><h4>David <br /><span>Italy</span></h4></td>
+                                        <td><h4>Laura <br /><span>Italy</span></h4></td>
                                     </tr>
                                     <tr>
                                         <td width={"60px"}><div className='dashboardImgBx'><img src="" alt="" /></div></td>
-                                        <td><h4>David <br /><span>Italy</span></h4></td>
+                                        <td><h4>Amal <br /><span>Turkey</span></h4></td>
                                     </tr>
                                     <tr>
                                         <td width={"60px"}><div className='dashboardImgBx'><img src="" alt="" /></div></td>
-                                        <td><h4>David <br /><span>Italy</span></h4></td>
+                                        <td><h4>Hiruko <br /><span>Japan</span></h4></td>
                                     </tr>
                                     <tr>
                                         <td width={"60px"}><div className='dashboardImgBx'><img src="" alt="" /></div></td>
-                                        <td><h4>David <br /><span>Italy</span></h4></td>
+                                        <td><h4>Stephanie <br /><span>France</span></h4></td>
                                     </tr>
                                     <tr>
                                         <td width={"60px"}><div className='dashboardImgBx'><img src="" alt="" /></div></td>
-                                        <td><h4>David <br /><span>Italy</span></h4></td>
+                                        <td><h4>David <br /><span>UK</span></h4></td>
                                     </tr>
                                     <tr>
                                         <td width={"60px"}><div className='dashboardImgBx'><img src="" alt="" /></div></td>
-                                        <td><h4>David <br /><span>Italy</span></h4></td>
+                                        <td><h4>Marco <br /><span>Spain</span></h4></td>
                                     </tr>
                                     <tr>
                                         <td width={"60px"}><div className='dashboardImgBx'><img src="" alt="" /></div></td>
-                                        <td><h4>David <br /><span>Italy</span></h4></td>
+                                        <td><h4>Simon <br /><span>US</span></h4></td>
                                     </tr>
                                     <tr>
                                         <td width={"60px"}><div className='dashboardImgBx'><img src="" alt="" /></div></td>
-                                        <td><h4>David <br /><span>Italy</span></h4></td>
+                                        <td><h4>Nikola <br /><span>Serbia</span></h4></td>
                                     </tr>
                                     <tr>
                                         <td width={"60px"}><div className='dashboardImgBx'><img src="" alt="" /></div></td>
-                                        <td><h4>David <br /><span>Italy</span></h4></td>
+                                        <td><h4>Greta <br /><span>Sweden</span></h4></td>
                                     </tr>
                                 </table>
                             </div>

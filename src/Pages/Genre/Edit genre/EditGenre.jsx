@@ -10,7 +10,6 @@ function EditGenre(props) {
     const[genreInput,setGenre]=useState({});
     const [error,setError]=useState([]);
     const route=useRouteMatch();
-    console.log(route);
 
     useEffect(()=>{
       document.title='BestReads | Edit Genre';
@@ -24,7 +23,7 @@ function EditGenre(props) {
            }
            setLoading(false);
         });
-},[route.params.id,history]);
+},[props.match.params.id,history]);
 
     const handleInput=(e)=>{
         e.persist();

@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
-import {Link,useHistory} from "react-router-dom"
+import {useHistory} from "react-router-dom"
 import "./AddTitle.css"
 function AddTitle() {
   const history = useHistory();
